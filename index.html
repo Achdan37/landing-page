@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Achdan Azizi Mustofa | Profil Pribadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000;--panel:#0c0c10;--line:#23232b;--text:#f2f2f5;--muted:#9a9aa8;--accent:#38bdf8;--accent-soft:#7dd3fc;--wa:#25d366;
+--display:"Unbounded","Trebuchet MS",system-ui,sans-serif;--body:"DM Sans","Segoe UI",system-ui,sans-serif;
+color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.7;
+background-image:radial-gradient(700px 420px at 85% -5%,rgba(56,189,248,.28),transparent 70%)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent-soft);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+section{padding:72px 0}
+h2{font-family:var(--display);font-weight:500;font-size:clamp(1.3rem,3.2vw,1.8rem);margin:0 0 28px;letter-spacing:-.01em}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center;min-height:88vh;padding:64px 0}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(2.2rem,7vw,4.4rem);line-height:1.05;margin:0 0 20px;letter-spacing:-.03em}
+.hero .role{font-size:1.15rem;color:var(--accent-soft);font-weight:500;margin:0 0 14px}
+.hero p.lead{color:var(--muted);max-width:30em;margin:0 0 30px;font-size:1.05rem}
+.cta{display:inline-block;padding:13px 28px;border-radius:999px;background:var(--text);color:#000;font-weight:700;text-decoration:none;transition:background .2s,color .2s}
+.cta:hover{background:var(--accent);color:#000}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px}
+.avatar{width:132px;height:132px;border-radius:50%;margin-bottom:22px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:2.4rem;color:#fff;background:linear-gradient(135deg,var(--accent),#0c4a6e);box-shadow:0 0 0 4px #000,0 0 0 6px var(--accent),0 0 40px rgba(56,189,248,.5);overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 20px}
+dt{color:var(--muted)}
+dd{margin:0;font-weight:500}
+
+/* Reveal sekali saat halaman dibuka */
+@media (prefers-reduced-motion:no-preference){
+.hero>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero>*:nth-child(2){animation-delay:.18s}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}}
+
+/* Tentang */
+.about{max-width:42em;font-size:1.1rem;color:#d4d4dc}
+.about strong{color:var(--text)}
+
+/* Keahlian */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.skill{border-left:3px solid var(--accent);padding:6px 0 6px 18px}
+.skill h3{margin:0 0 4px;font-size:1.1rem}
+.skill p{margin:0;color:var(--muted);font-size:.96rem}
+
+/* Proyek */
+.projects{border-top:1px solid var(--line)}
+.project{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:8px 32px;padding:24px 0;border-bottom:1px solid var(--line)}
+.project h3{margin:0;font-size:1.1rem}
+.project p{margin:0;color:var(--muted)}
+
+/* Kontak */
+.contact{margin:24px 0 48px;padding:64px 28px;text-align:center;border:1px solid var(--line);border-radius:28px;background:radial-gradient(500px 260px at 50% 0%,rgba(56,189,248,.25),transparent 75%),var(--panel)}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted);max-width:30em;margin:0 auto 30px}
+.wa{display:inline-flex;align-items:center;gap:12px;padding:18px 38px;border-radius:999px;background:var(--wa);color:#04210f;font-weight:700;font-size:1.15rem;text-decoration:none;box-shadow:0 0 0 0 rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s}
+.wa:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(37,211,102,.45)}
+.wa svg{width:28px;height:28px;fill:currentColor}
+footer{padding:0 0 36px;text-align:center;color:var(--muted);font-size:.88rem}
+
+
+/* Navigasi */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(0,0,0,.85);z-index:19}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(0,0,0,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--display);font-weight:700;text-decoration:none;font-size:1rem}
+.links{display:flex;align-items:center;gap:26px}
+.links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--text)}
+.links a.pill{color:#000;background:var(--text);padding:8px 18px;border-radius:999px;font-weight:700}
+.links a.pill:hover{background:var(--accent);color:#000}
+.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--panel);padding:6px 14px;border-radius:999px;font-size:.9rem;color:var(--muted);margin-bottom:22px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1 span{color:var(--accent-soft)}
+.tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;padding:0;list-style:none}
+.tools li{border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:.9rem;color:#d4d4dc}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px}
+.ghost{display:inline-block;padding:13px 28px;border-radius:999px;border:1px solid var(--line);text-decoration:none;font-weight:700;transition:border-color .2s}
+.ghost:hover{border-color:var(--accent-soft)}
+/* Kartu proyek */
+.work{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.proj{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:border-color .2s}
+.proj:hover{border-color:var(--accent)}
+.thumb{height:140px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:1.5rem;color:#fff;background:linear-gradient(135deg,#082f49,#0369a1)}
+.thumb.b{background:linear-gradient(135deg,#172554,#1d4ed8)}
+.thumb.c{background:repeating-linear-gradient(45deg,#111,#111 10px,#16161c 10px,#16161c 20px);color:var(--muted)}
+.proj div.body{padding:20px}
+.proj h3{margin:0 0 6px;font-size:1.1rem}
+.proj p{margin:0 0 14px;color:var(--muted);font-size:.96rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{font-size:.8rem;border:1px solid var(--line);border-radius:6px;padding:2px 10px;color:#c4c4d0}
+/* Pendidikan */
+.edu{border-left:2px solid var(--line);padding-left:24px;margin-left:6px;position:relative}
+.edu::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.edu h3{margin:0 0 4px;font-size:1.15rem}
+.edu p{margin:0;color:var(--muted)}
+@media (max-width:760px){.links a:not(.pill){display:none}}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--line)}
+.fact{padding:30px 22px;text-align:center}
+.fact+.fact{border-left:1px solid var(--line)}
+.fact b{display:block;font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,4.5vw,2.6rem);line-height:1.1;color:var(--accent-soft);margin-bottom:6px}
+.fact span{color:var(--muted);font-size:.95rem}
+@media (max-width:560px){.fact{padding:22px 8px}.fact span{font-size:.82rem}}
+/* Animasi */
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#6366f1);transform-origin:left;transform:scaleX(0);z-index:30}
+.blobs{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}
+.blobs span{position:absolute;border-radius:50%;filter:blur(90px);opacity:.2}
+.blobs .b1{width:420px;height:420px;background:#0284c7;left:6%;top:28%}
+.blobs .b2{width:360px;height:360px;background:#2563eb;right:4%;bottom:6%}
+.caret{display:none;width:2px;height:1.1em;background:var(--accent-soft);margin-left:3px;vertical-align:-.2em}
+.anim .caret{display:inline-block;animation:blink 1s steps(1) infinite}
+.card,.proj{position:relative}
+.card::after,.proj::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.22),transparent 70%)}
+.card:hover::after,.proj:hover::after{opacity:1}
+.anim .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1),border-color .2s}
+.anim .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+.blobs .b1{animation:drift 18s ease-in-out infinite alternate}
+.blobs .b2{animation:drift 22s ease-in-out infinite alternate-reverse}
+.avatar{animation:float 5s ease-in-out infinite}
+.wa{animation:ping 2.2s ease-out infinite}
+.wa:hover{animation:none}
+@keyframes blink{50%{opacity:0}}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(90px,-70px) scale(1.25)}}
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%,100%{box-shadow:0 0 0 24px rgba(37,211,102,0)}}}
+@media (max-width:760px){
+.hero{grid-template-columns:1fr;min-height:0;gap:36px;padding:44px 0 24px}
+.project{grid-template-columns:1fr}
+section{padding:52px 0}
+.contact{padding:48px 20px}}
+</style>
+</head>
+<body>
+<div class="blobs" aria-hidden="true"><span class="b1"></span><span class="b2"></span></div>
+<div id="bar"></div>
+<nav class="nav"><div class="wrap">
+  <a class="brand" href="#home">Achdan</a>
+  <div class="links"><a href="#tentang">Profil</a><a href="#keahlian">Kompetensi</a><a href="#portofolio">Portofolio</a><a href="#pendidikan">Pendidikan</a><a class="pill" href="#kontak">Hubungi</a></div>
+</div></nav>
+<main class="wrap">
+
+<!-- HERO -->
+<header class="hero" id="home">
+  <div>
+    <span class="badge"><i></i>Semester 5 · Politeknik Negeri Madiun</span>
+    <p class="role"><span id="typed">Mahasiswa Teknologi Informasi</span><b class="caret"></b></p>
+    <h1>Achdan <span>Azizi Mustofa</span></h1>
+    <p class="lead">Mahasiswa D3 Teknologi Informasi yang berfokus pada jaringan komputer, infrastruktur fiber optic, serta pengembangan aplikasi web dan mobile. Berkomitmen menghadirkan solusi teknologi yang andal untuk mendukung digital kewirausahaan.</p>
+    <ul class="tools"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Git</li><li>VS Code</li></ul>
+    <div class="btns"><a class="cta" href="#kontak">Hubungi saya</a><a class="ghost" href="#portofolio">Lihat portofolio</a></div>
+  </div>
+  <div class="card">
+    <!-- Ganti dengan foto: <div class="avatar"><img src="foto.jpg" alt="Foto Achdan Azizi Mustofa"></div> -->
+    <div class="avatar"><img src="foto.jpg" alt="Foto Achdan Azizi Mustofa"></div>
+    <dl>
+      <dt>Kampus</dt><dd>Politeknik Negeri Madiun</dd>
+      <dt>Program</dt><dd>D3 Teknologi Informasi</dd>
+      <dt>Semester</dt><dd>5</dd>
+      <dt>Hobi</dt><dd>Bermain game</dd>
+    </dl>
+  </div>
+</header>
+
+<div class="facts">
+  <div class="fact"><b>D3</b><span>Teknologi Informasi</span></div>
+  <div class="fact"><b>5</b><span>Bidang kompetensi</span></div>
+  <div class="fact"><b>Sem. 5</b><span>Politeknik Negeri Madiun</span></div>
+</div>
+
+<!-- TENTANG SAYA -->
+<section id="tentang">
+  <h2>Profil</h2>
+  <p class="about">Saya <strong>mahasiswa semester 5 program studi D3 Teknologi Informasi di Politeknik Negeri Madiun</strong>. Bidang yang saya dalami meliputi jaringan komputer, fiber optic, konfigurasi MikroTik, serta pengembangan aplikasi web dan mobile. Saya tertarik menerapkan keahlian tersebut untuk mendukung digital kewirausahaan, khususnya membantu pelaku usaha membangun kehadiran digital yang profesional. Di luar perkuliahan, saya menyalurkan minat pada permainan game yang melatih ketelitian, strategi, dan kerja sama tim.</p>
+</section>
+
+<!-- KEAHLIAN -->
+<section id="keahlian">
+  <h2>Kompetensi</h2>
+  <div class="skills">
+    <div class="skill"><h3>Jaringan komputer</h3><p>Memahami perancangan, konfigurasi, dan pemecahan masalah jaringan.</p></div>
+    <div class="skill"><h3>Fiber optic</h3><p>Memahami prinsip transmisi serat optik dan instalasi jaringan fiber.</p></div>
+    <div class="skill"><h3>MikroTik</h3><p>Konfigurasi dan manajemen router untuk kebutuhan jaringan.</p></div>
+    <div class="skill"><h3>Mobile</h3><p>Pengembangan aplikasi untuk perangkat mobile.</p></div>
+    <div class="skill"><h3>Web</h3><p>Pembuatan situs web responsif dengan tampilan profesional.</p></div>
+  </div>
+</section>
+
+<!-- PORTOFOLIO -->
+<section id="portofolio">
+  <h2>Portofolio</h2>
+  <div class="work">
+    <article class="proj"><div class="thumb">Profil</div><div class="body"><h3>Landing page profil pribadi</h3><p>Halaman profil satu halaman yang responsif, dilengkapi tautan Click-to-Chat WhatsApp untuk komunikasi langsung.</p><div class="tags"><span>HTML</span><span>CSS</span><span>WhatsApp</span></div></div></article>
+    <article class="proj"><div class="thumb b">IDS</div><div class="body"><h3>Review jurnal sistem deteksi intrusi</h3><p>Kajian jurnal yang membandingkan Snort dan Suricata pada mata kuliah keamanan siber.</p><div class="tags"><span>Keamanan siber</span><span>Snort</span><span>Suricata</span></div></div></article>
+    <article class="proj"><div class="thumb c">+</div><div class="body"><h3>Proyek berikutnya</h3><p>Proyek jaringan dan aplikasi lainnya akan ditambahkan di sini.</p><div class="tags"><span>Segera hadir</span></div></div></article>
+  </div>
+</section>
+
+<!-- PENDIDIKAN -->
+<section id="pendidikan">
+  <h2>Pendidikan</h2>
+  <div class="edu"><h3>Politeknik Negeri Madiun</h3><p>D3 Teknologi Informasi, semester 5. Mendalami jaringan komputer, pemrograman web, dan keamanan siber.</p></div>
+</section>
+
+<!-- KONTAK & CTA -->
+<div class="contact" id="kontak">
+  <h2>Mari berkolaborasi</h2>
+  <p>Tertarik membahas proyek atau peluang kerja sama? Silakan hubungi saya melalui WhatsApp untuk mendapatkan respons yang cepat.</p>
+  <a class="wa" href="https://wa.me/6288803318324?text=Halo%20Achdan%2C%20saya%20telah%20melihat%20profil%20Anda%20dan%20ingin%20berdiskusi%20lebih%20lanjut." target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.7 8.22-8.23 8.22zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.23-.17-.48-.29z"/></svg>
+    Hubungi saya via WhatsApp
+  </a>
+</div>
+
+<footer>© 2026 Achdan Azizi Mustofa · Politeknik Negeri Madiun</footer>
+</main>
+<script>
+(function(){
+var bar=document.getElementById('bar');
+function prog(){var h=document.documentElement,m=h.scrollHeight-h.clientHeight;bar.style.transform='scaleX('+(m>0?h.scrollTop/m:0)+')'}
+addEventListener('scroll',prog,{passive:true});prog();
+if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+document.documentElement.classList.add('anim');
+
+var els=document.querySelectorAll('section h2,.about,.skill,.proj,.edu,.contact,.tools,.fact');
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+els.forEach(function(el){
+  el.classList.add('reveal');
+  var sib=el.parentNode.children;
+  el.style.transitionDelay=(Array.prototype.indexOf.call(sib,el)*90)+'ms';
+  io.observe(el);
+});
+
+document.querySelectorAll('.card,.proj').forEach(function(c){
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+});
+
+var words=['Mahasiswa Teknologi Informasi','Berfokus pada Jaringan Komputer','Pengembangan Web dan Mobile'],w=0,i=0,del=false,t=document.getElementById('typed');
+t.textContent='';
+(function tick(){
+  var word=words[w];
+  t.textContent=word.slice(0,i);
+  if(!del&&i===word.length){del=true;return setTimeout(tick,1800)}
+  if(del&&i===0){del=false;w=(w+1)%words.length}
+  i+=del?-1:1;
+  setTimeout(tick,del?35:75);
+})();
+})();
+</script>
+</body>
+</html>
