@@ -337,9 +337,9 @@ document.querySelectorAll('.glass').forEach(function(c){
   }
   function step(n){
     var dt=Math.min((n-lt)/1000,.032);lt=n;
-    if(!drag){om+=(-26*Math.sin(th)-1.1*om)*dt;th+=om*dt}
+    if(!drag){om+=(-26*Math.sin(th)-5.5*om)*dt;th+=om*dt}
     draw();
-    if(drag||Math.abs(th)>.002||Math.abs(om)>.01){raf=requestAnimationFrame(step)}
+    if(drag||Math.abs(th)>.012||Math.abs(om)>.06){raf=requestAnimationFrame(step)}
     else{raf=0;th=0;om=0;draw()}
   }
   function go(){if(!raf){lt=performance.now();raf=requestAnimationFrame(step)}}
