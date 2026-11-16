@@ -338,12 +338,12 @@ document.querySelectorAll('.glass').forEach(function(c){
   function step(n){
     var dt=Math.min((n-lt)/1000,.032);lt=n;
     if(!drag){
-      var E=.5*om*om+26*(1-Math.cos(th)),c;
-      if(reduce)c=5.5;
-      else if(E>.06)c=1.8;      /* ayunan besar: melambat pelan */
-      else if(E<.035)c=-.6;     /* ayunan kecil: dijaga agar tetap bergoyang */
+      var K=7,E=.5*om*om+K*(1-Math.cos(th)),c;  /* K kecil = ayunan lebih lambat */
+      if(reduce)c=4;
+      else if(E>.017)c=1.1;     /* ayunan besar: melambat pelan */
+      else if(E<.010)c=-.3;     /* ayunan kecil: dijaga agar tetap bergoyang */
       else c=0;                 /* ayunan lembut: terus berayun */
-      om+=(-26*Math.sin(th)-c*om)*dt;th+=om*dt;
+      om+=(-K*Math.sin(th)-c*om)*dt;th+=om*dt;
     }
     draw();
     if(drag||!reduce||Math.abs(th)>.012||Math.abs(om)>.06){raf=requestAnimationFrame(step)}
